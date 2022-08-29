@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /\$1
+  name: tekkadan-ingress-rules
+spec:
+  rules:
+  - host: testing.bangjago.my.id
+    http:
+      paths:
+      - backend:
+          service:
+            name: wordpress
+            port:
+              number: 80
+        path: /(.*)
+        pathType: Prefix

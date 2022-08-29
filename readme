@@ -1,0 +1,6 @@
+Jalanin perintah di bawah untuk apply ke kube :
+--------------------
+kubectl apply -k ./
+
+
+01~
